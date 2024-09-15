@@ -100,6 +100,14 @@ void free_state(game_state_t *state) {
 /* Task 3 */
 void print_board(game_state_t *state, FILE *fp) {
   // TODO: Implement this function.
+  if(!state || !fp) return;
+  for(int i = 0; i < state->num_rows; ++i) {
+    for(int j =0; j < COLUMN; ++j) {
+      fprintf(fp, "%c", state->board[i][j]);
+    }
+
+      fprintf(fp, "\n");
+  }
   return;
 }
 
